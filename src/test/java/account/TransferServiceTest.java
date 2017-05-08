@@ -14,6 +14,6 @@ public class TransferServiceTest {
         TransferService transferService = new TransferService();
         transferService.transfer(srcAccount, targetAccount, 50.0D);
         assertThat(srcAccount.getBalance(), is(50.0D));
-        assertThat(targetAccount.getBalance(), is(1001.0D));
+        assertThat(targetAccount.getBalance(), is(100.0D));
     }
 }
