@@ -3,7 +3,7 @@ package codeAnalyzer;
 import java.io.*;
 
 public class CodeAnalyzer {
-    public int anlyze(String path) {
+    public int totalFileCount(String path) {
         File directory = new File(path);
         int count = 0;
         if (directory.exists() && directory.isDirectory()) {
@@ -12,7 +12,7 @@ public class CodeAnalyzer {
                 if (file.isFile()) {
                     count += 1;
                 } else {
-                    count += anlyze(file.getAbsolutePath());
+                    count += totalFileCount(file.getAbsolutePath());
                 }
             }
             return count;

@@ -13,7 +13,7 @@ public class App {
     public static void main(String[] args) throws IOException {
         String path = args[0];
         CodeAnalyzer codeAnalyzer = new CodeAnalyzer();
-        int fileCount = codeAnalyzer.anlyze(path);
+        int fileCount = codeAnalyzer.totalFileCount(path);
         System.out.println("there are " + fileCount + " files under "+ path);
         System.out.println("total file count is " + codeAnalyzer.totalLine(path));
     }

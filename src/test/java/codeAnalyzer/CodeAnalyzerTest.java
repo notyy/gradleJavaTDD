@@ -19,13 +19,13 @@ public class CodeAnalyzerTest {
     public void should_throw_IllegalArgumentException_if_path_not_exist(){
         CodeAnalyzer codeAnalyzer = new CodeAnalyzer();
         thrown.expect(IllegalArgumentException.class);
-        codeAnalyzer.anlyze("not_exist");
+        codeAnalyzer.totalFileCount("not_exist");
     }
 
     @Test
     public void can_count_files_under_given_folder(){
         CodeAnalyzer codeAnalyzer = new CodeAnalyzer();
-        int fileCount = codeAnalyzer.anlyze(SRC_TEST_FIXTURE);
+        int fileCount = codeAnalyzer.totalFileCount(SRC_TEST_FIXTURE);
         assertThat(fileCount,is(3));
     }
 
@@ -35,7 +35,7 @@ public class CodeAnalyzerTest {
     public void should_throw_IllegalArgumentException_if_path_is_not_a_directory(){
         CodeAnalyzer codeAnalyzer = new CodeAnalyzer();
         thrown.expect(IllegalArgumentException.class);
-        codeAnalyzer.anlyze(SRC_TEST_FIXTURE + "/1.java");
+        codeAnalyzer.totalFileCount(SRC_TEST_FIXTURE + "/1.java");
     }
 
     @Test
